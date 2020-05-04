@@ -213,7 +213,7 @@ Nright = 0
 collocation = tkinter.Tk()
     
 collocation.title("Collocation type 1 Exercise")
-collocation.geometry("1200x500")
+collocation.geometry("1200x450+10+10")
 i=0
 already_tried = False
 collocationExercise1()
@@ -221,7 +221,7 @@ collocationExercise1()
 # Second type of exercise.
 collocation = tkinter.Tk()
 collocation.title("Collocation type 2 Exercise")
-collocation.geometry("1200x600")
+collocation.geometry("1200x500+10+10")
 i=0
 Nexec = 0
 Nright = 0

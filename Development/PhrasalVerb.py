@@ -123,7 +123,7 @@ Nright = 0
 phrasalVerb = tkinter.Tk()
     
 phrasalVerb.title("Phrasal Verb Exercise")
-phrasalVerb.geometry("1200x500")
+phrasalVerb.geometry("1200x500+10+10")
 i=0
 already_tried = False
 phrasalExercise(Nright,Nexec)

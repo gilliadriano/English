@@ -145,7 +145,7 @@ Nright = 0
 WordFormation = tkinter.Tk()
 
 WordFormation.title("Word Formation Exercise")
-WordFormation.geometry("1200x600")
+WordFormation.geometry("1200x600+10+10")
 i = 0
 already_tried = False
 wordFormationExercise(Nright, Nexec)
