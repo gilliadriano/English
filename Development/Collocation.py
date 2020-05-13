@@ -19,7 +19,7 @@ def collocationExercise2():
     global already_tried, i, exercise, my_errors, exerciseList2, Nexec, Nright
     
     def clicked():
-        global Nexec, Nright, already_tried, I6, I3, exercise, my_errors
+        global Nexec, Nright, already_tried, I6, I3, exercise, my_errors,asw
         value = I3.get()
 
         if (value == exercise[3]):
@@ -27,26 +27,30 @@ def collocationExercise2():
                 I6.destroy()
                 I6 = tkinter.Label(collocation,text="Correct",bg="green",font=("Arial Bold",15))
                 I6.pack()
+                asw["text"]=exercise[3]
             else:
                 I6 = tkinter.Label(collocation,text="Correct",bg="green",font=("Arial Bold",15))
                 I6.pack()
                 already_tried=True
                 Nexec=Nexec+1
                 Nright=Nright+1
+                asw["text"]=exercise[3]
         else:
             if already_tried:
                 I6.destroy()
                 I6 = tkinter.Label(collocation,text="Incorrect",bg="red",font=("Arial Bold",15))
                 I6.pack()
+                asw["text"]=exercise[3]
             else:
                 I6 = tkinter.Label(collocation,text="Incorrect",bg="red",font=("Arial Bold",15))
                 I6.pack()
                 Nexec = Nexec+1
                 already_tried = True
                 my_errors = my_errors.append(exercise)
+                asw["text"]=exercise[3]
     
     def build_new(exercise):
-        global I3
+        global I3,asw
         # I0 is just a blank space.
         I0 = tkinter.Label(collocation,text=" ",font=("Arial Bold",15)).pack()
         
@@ -72,6 +76,10 @@ def collocationExercise2():
         # Entry
         I3 = Entry(collocation,font=("Arial",12), width = 25)
         I3.pack()
+
+        # Answer
+        asw = tkinter.Label(collocation,text=" ",font=("Arial",15))
+        asw.pack()
         
         # The button Done corrects the exercise.
         I4 = tkinter.Button(collocation,text="Done",font=("Arial Bold",12),width=30,command=clicked).pack(side="left")
@@ -80,7 +88,7 @@ def collocationExercise2():
         
     def nxtquestion():
         global i, exerciseList2,already_tried,I3,exercise,Nexec,Nright, my_errors
-        if i<(len(exerciseList)-1):
+        if i<(len(exerciseList2)-1):
             clc(collocation)
             i = i+1
             exercise = exerciseList2.iloc[i]
